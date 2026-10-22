@@ -70,14 +70,47 @@
     </head>
     <body>
         <h1>Hugo Souto Fernández-Vilanova</h1>
+
         <h2>Academic experiences:</h2>
-        <ul>
-            <li>Science & technology bachelor</li>
-            <li>Web Application Development (Vocational Training)</li>
-        </ul>
+        <ul id="lista_academica"></ul>
+
         <h2>Professional experiences:</h2>
-        <ul>
-            <li>None</li>
-        </ul>
+        <ul id="lista_profesional"></ul>
     </body>
+    <script>
+        const exp_academica = [
+            {
+                "titulo": "GS Desarrollo de Aplicaciones Web",
+                "periodo": "2025-2027",
+                "centro": "CPR Afundacion A Coruña"
+            },
+            {
+                "titulo": "Bachillerato de Ciencias y Tecnología",
+                "periodo": "2023-2025",
+                "centro": "IES María Casares"
+            }
+        ]
+        const exp_profesional = [
+            {
+                "titulo": "Ninguna"
+            }
+        ]
+
+        const list_exp_acad = document.getElementById("lista_academica")
+        const list_exp_prof = document.getElementById("lista_profesional")
+
+        exp_academica.forEach(function(experiencia) {
+            const li = document.createElement("li");
+
+            li.textContent = experiencia.titulo + " (" + experiencia.periodo + ") - " + experiencia.centro;
+            list_exp_acad.appendChild(li);
+        });
+
+        exp_profesional.forEach(function(experiencia) {
+            const li = document.createElement("li");
+
+            li.textContent = experiencia.titulo;
+            list_exp_prof.appendChild(li);
+        });
+    </script>
 </html>
