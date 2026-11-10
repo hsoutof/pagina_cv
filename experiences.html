@@ -1,10 +1,12 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Experiencias</title>
-        <style>          
+        <meta name="description" content="Curriculum vitae de Hugo Souto Fernández-Vilanova, con sus experiencias académicas y profesionales.">
+        <title>Experiencias - Hugo Souto</title>
+        <style>
             * {
                 margin: 0;
                 padding: 0;
@@ -69,48 +71,56 @@
         </style>
     </head>
     <body>
-        <h1>Hugo Souto Fernández-Vilanova</h1>
+        <main>
+            <h1>Hugo Souto Fernández-Vilanova</h1>
 
-        <h2>Experiencias académicas:</h2>
-        <ul id="lista_academica"></ul>
+            <section aria-labelledby="titulo-academico">
+                <h2 id="titulo-academico">Experiencias académicas:</h2>
+                <ul id="lista_academica"></ul>
+            </section>
 
-        <h2>Experiencias profesionales:</h2>
-        <ul id="lista_profesional"></ul>
+            <section aria-labelledby="titulo-profesional">
+                <h2 id="titulo-profesional">Experiencias profesionales:</h2>
+                <ul id="lista_profesional"></ul>
+            </section>
+        </main>
+
+        <script>
+            const exp_academica = [
+                {
+                    "titulo": "GS Desarrollo de Aplicaciones Web",
+                    "periodo": "2025-2027",
+                    "centro": "CPR Afundacion A Coruña"
+                },
+                {
+                    "titulo": "Bachillerato de Ciencias y Tecnología",
+                    "periodo": "2023-2025",
+                    "centro": "IES María Casares"
+                }
+            ];
+
+            const exp_profesional = [
+                {
+                    "titulo": "Ninguna"
+                }
+            ];
+
+            const list_exp_acad = document.getElementById("lista_academica");
+            const list_exp_prof = document.getElementById("lista_profesional");
+
+            exp_academica.forEach(function(experiencia) {
+                const li = document.createElement("li");
+
+                li.textContent = experiencia.titulo + " (" + experiencia.periodo + ") - " + experiencia.centro;
+                list_exp_acad.appendChild(li);
+            });
+
+            exp_profesional.forEach(function(experiencia) {
+                const li = document.createElement("li");
+
+                li.textContent = experiencia.titulo;
+                list_exp_prof.appendChild(li);
+            });
+        </script>
     </body>
-    <script>
-        const exp_academica = [
-            {
-                "titulo": "GS Desarrollo de Aplicaciones Web",
-                "periodo": "2025-2027",
-                "centro": "CPR Afundacion A Coruña"
-            },
-            {
-                "titulo": "Bachillerato de Ciencias y Tecnología",
-                "periodo": "2023-2025",
-                "centro": "IES María Casares"
-            }
-        ]
-        const exp_profesional = [
-            {
-                "titulo": "Ninguna"
-            }
-        ]
-
-        const list_exp_acad = document.getElementById("lista_academica")
-        const list_exp_prof = document.getElementById("lista_profesional")
-
-        exp_academica.forEach(function(experiencia) {
-            const li = document.createElement("li");
-
-            li.textContent = experiencia.titulo + " (" + experiencia.periodo + ") - " + experiencia.centro;
-            list_exp_acad.appendChild(li);
-        });
-
-        exp_profesional.forEach(function(experiencia) {
-            const li = document.createElement("li");
-
-            li.textContent = experiencia.titulo;
-            list_exp_prof.appendChild(li);
-        });
-    </script>
 </html>
